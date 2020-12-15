@@ -44,7 +44,7 @@ $(function(){
                 time: 1000 
               })
               if(res.status !==1) {
-                locationStorage.setItem('token',res.token);
+                localStorage.setItem('token',res.token);
                 location.href ="index.html";
               } 
         })
