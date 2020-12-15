@@ -30,7 +30,8 @@
               <div class="layui-form-item">
                 <i class="layui-icon layui-icon-password"></i>
                 <input type="password" name="password" required  lay-verify="required" placeholder="请输入密码"  class="layui-input">
-                <span class="glyphicon glyphicon-eye-close"></span>
+                <span class="glyphicon glyphicon-eye-close closeEyes"></span>
+                <span class="glyphicon glyphicon-eye-open openEyes" style="display: none;"></span>
             </div>
             <div class="layui-form-item">
                 <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">登录</button>
@@ -48,12 +49,15 @@
               </div>
               <div class="layui-form-item">
                   <i class="layui-icon layui-icon-password"></i>
-                <input type="password" name="password" required  lay-verify="required|pwd" placeholder="请输入密码"  class="layui-input">
-                <span class="glyphicon glyphicon-eye-close"></span>
+                <input type="password" name="password"required  lay-verify="required|pwd|" placeholder="请输入密码"  class="layui-input" id="pwd">
+                <span class="glyphicon glyphicon-eye-close closeEyes"></span>
+                <span class="glyphicon glyphicon-eye-open openEyes"></span>
             </div>
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-password"></i>
-                <input type="password" name="repassword" required  lay-verify="required|pwd|repwd" placeholder="请再次确认输入密码"  class="layui-input">
+                <input type="password" name="repassword" required  lay-verify="required|pwd|repwd" placeholder="请再次确认密码"  class="layui-input">
+                <span class="glyphicon glyphicon-eye-close closeEyes"></span>
+                <span class="glyphicon glyphicon-eye-open openEyes" style="display: none;"></span>
             </div>
             <div class="layui-form-item">
                 <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">注册</button>

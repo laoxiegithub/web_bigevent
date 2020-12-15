@@ -51,19 +51,24 @@ $(function(){
     })
     // 利用layui内置表单模块的表单验证 封装自己的一个规则的函数
     var layform = layui.form;
-    console.log(layform);
-    
     layform.verify({
         pwd:[/^[\S]{6,16}$/,'密码必须是6-16位,且不能出现空格'],
         repwd:function(value){
-            var pwd = $('.re-form[name=password]').val();
-            if(value !== pwd){
+            var pwd = $('#pwd').val();
+            console.log(pwd);
+            if(value!== pwd){
                 return '两次密码不一致'
             }
         }
-    }
-    
-
-
-    )
+    } )
+    $(".closeEyes").click(function(){
+              $(this).siblings().attr("type","text");
+              $(this).hide();
+              $(this).hide().siblings(".openEyes").show();
+    })
+    $(".openEyes").click(function(){
+        $(this).siblings().attr("type","password");
+        $(this).hide().siblings(".closeEyes").show();
+       
+})
    })
