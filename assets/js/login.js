@@ -13,14 +13,13 @@ $(function(){
     var regExp = /^[a-zA-Z0-9]{6,16}$/
     // 获取layui中layer这个属性
     var layer = layui.layer;
-    var baseUrl = 'http://ajax.frontend.itheima.net';
     // 注册页面
    $(".re-form").on("submit",function(e) {
             e.preventDefault();
             var val = $(this).serialize();
         $.ajax({
             method:'POST',
-            url: baseUrl+'/api/reguser',
+            url: '/api/reguser',
             data:val,
             success: function(res) {
                 layer.msg(res.message+'!', {
@@ -38,7 +37,7 @@ $(function(){
    $(".lg-form").submit( function(e) {
        e.preventDefault();
        var val = $(this).serialize();
-        $.post(baseUrl+'/api/login', val, function(res){
+        $.post('/api/login', val, function(res){
             layer.msg(res.message+'!', {
                 icon: 1,
                 time: 1000 
