@@ -22,10 +22,9 @@
           
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
-                    <a href="javascript:;">
-                        <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"
-                            class="layui-nav-img">
-                        个人中心
+                    <a href="javascript:;" class="userinfo">
+                        <img class="layui-nav-img">
+                            <span class="text-avatar"></span> 个人中心
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="">基本资料</a></dd>
@@ -39,6 +38,11 @@
 
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
+                <div class="userinfo">
+                    <img class="layui-nav-img">
+                    <span class="text-avatar"></span>
+                    <span class="welcome"></span>
+                </div>
                 <!-- 左侧导航区域 -->
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all">
                     <li class="layui-nav-item layui-this"><a href="/home/dashboard.html" target="fm"><span class="iconfont">&#xe6a9;</span>首页</a></li>
@@ -72,9 +76,11 @@
             <!-- 底部固定区域 -->
             © itheima.com黑马程序员
           </div>
+          
+          <script src="/assets/lib/jquery.js"></script>
         <script src="/assets/lib/layui/layui.all.js"></script>  
-        <script src="/assets/lib/jquery.js"></script>   
         <script src="/assets/js/base.js"></script>
+        <script src="/assets/js/index.js"></script>
 </body>
 
 </html>
