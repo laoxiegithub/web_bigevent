@@ -14,12 +14,9 @@ iframe {
 }
 a {
     transition: none!important;
-<<<<<<< HEAD
-}
-=======
-}
 
-.layui-side-scroll .userinfo {
+}
+ .userinfo {
     height: 60px;
     text-align: center;
     line-height: 60px;
@@ -40,4 +37,3 @@ a {
     user-select: none;
 }
 
->>>>>>> index
