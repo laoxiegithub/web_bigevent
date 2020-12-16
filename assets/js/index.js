@@ -1,21 +1,17 @@
 $(function() {
-    getUserInfo()
+    getUserInfo();
     // 封装一个获取用户信息的函数
+})
 function getUserInfo () {
     $.ajax ({
         method:'GET',
         url:'/my/userinfo',
-        headers:{
-            Authorization:localStorage.getItem('token')|| ''
-        },
         success:function(res) {
-            if(res.status ==1 ) {
+             if(res.status !==0 ) {
                 return layui.layer.msg('获取用户信息失败')
-
-            }
-         render(res.data)
-        },
-      
+            } 
+         render(res.data);
+        }   
     })
 }
 // 判断用户是否有图像
@@ -39,9 +35,9 @@ $(".close").on('click',function(){
     // 1 需要情况token的值
     //2 需要跳转到login页面
       localStorage.removeItem('token');
-      location.href = '../../home/login.html'  
+      location.href = 'login.html'  
         layer.close(index);
       });
 })
-})
+
 

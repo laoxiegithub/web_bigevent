@@ -1,5 +1,4 @@
 $(function(){
-    console.log(location);
     // 先给a链接绑定事件 实现登录页面和注册页面的切换
     $("#reg-btn").on("click", function(){
         $(".re-form").show()
@@ -10,7 +9,7 @@ $(function(){
         $(".lg-form").show()
     })
     // 通过表单收集信息 发起ajax请求并判断表单内容书写规范
-    var regExp = /^[a-zA-Z0-9]{6,16}$/
+   
     // 获取layui中layer这个属性
     var layer = layui.layer;
     // 注册页面
@@ -37,16 +36,18 @@ $(function(){
    $(".lg-form").submit( function(e) {
        e.preventDefault();
        var val = $(this).serialize();
-        $.post('/api/login', val, function(res){
-            layer.msg(res.message+'!', {
-                icon: 1,
-                time: 1000 
-              })
-              if(res.status !==1) {
-                localStorage.setItem('token',res.token);
-                location.href ="index.html";
-              } 
-        })
+      $.ajax({
+          method:'POST',
+          url:'/api/login',
+          data:val,
+          success: function(res){
+             if(res.status!==0) {
+                 return layui.layer.msg('登录失败');
+             }
+             localStorage.setItem('token',res.token);
+             location.href = 'index.html';
+          }
+      })
     })
     // 利用layui内置表单模块的表单验证 封装自己的一个规则的函数
     var layform = layui.form;
