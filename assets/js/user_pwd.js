@@ -14,7 +14,6 @@ $(function() {
         }
     })
     $('.layui-form').submit(function(e){
-    
         e.preventDefault();
         $.ajax ({
             method:'POST',
@@ -36,4 +35,27 @@ $(function() {
             }
         })
     })
+    // 思考如何实现点击重置密码 将密码重置为6个0 ？
+ /*    $('#reset').click(function(e){
+        e.preventDefault()
+        layui.layer.confirm('点击确定会将密码重置为6个0', {icon: 3, title:'提示！'}, function(index){
+            //do something
+            $.ajax ({
+                method:'POST',
+                url:'/my/updatepwd',
+                data:{
+                    oldPwd: $('.password').val(),
+                    newPwd: 000000
+                },
+                success:function(res) {
+                    if(res.status ==1) {
+                        layui.layer.msg('重置密码失败')
+                    }
+                    $('.layui-form [type=password]').val('')
+                    layui.layer.msg('重置密码成功');
+                }
+                })
+            layer.close(index);
+          });
+        })  */
 })
