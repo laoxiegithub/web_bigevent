@@ -14,6 +14,7 @@ $(function() {
         }
     })
     $('.layui-form').submit(function(e){
+    
         e.preventDefault();
         $.ajax ({
             method:'POST',
@@ -27,8 +28,10 @@ $(function() {
                 if(res.status==1) {
                     layui.layer.msg('原始密码错误')
                 } else{
-                    $('.layui-form')[0].reset();//?
-                    layui.layer.msg('原始密码成功');
+                    console.log($('.layui-form'));
+                    // $('.layui-form')[0].reset()  思考为何不行
+                    $('.layui-form [type=password]').val('')
+                   layui.layer.msg('更改密码成功');
                 }
             }
         })
