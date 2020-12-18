@@ -17,7 +17,7 @@
        
  })
  $('#file').on('change', function(e){
-    var fileList = e.target.files;
+    var fileList = e.target.files[0];
         if(fileList.length===0) {
             return layer.msg('请选择更换的图片！')
         } else {
